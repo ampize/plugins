@@ -1,0 +1,14 @@
+Filters
+
+[
+  {
+    "id": "1", // Item ID
+    "type": "article",
+    ...
+  },
+  {
+    "id": "2", // Item ID
+    "type": "product",
+    ...
+  }
+]

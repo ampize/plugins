@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1", // Page ID
+    "title": "Home", // Header Title
+    "description": "SEO page description", // Header description
+    "keywords": "tag1, tag2, tag3", // Header Keywords
+    "canonicalUrl": "http://originalpage.com/page/123",// Canonical Url
+    "isRoot": True, // True or False
+    "order": 1, // Numerical order in Menu
+    "parentId": null,// null or parent page ID
+    "exludeFromMenu": False, // True or False
+    "type": "list", // list, item or html
+    "body": null, // null or html content for html types
+    "itemId": null, // null or item ID for item types
+    "listId": null, // null or liste ID for list types
+  },
+  {
+    "id": "2",
+    "title": "Static page",
+    "description": "My Static Page",
+    "keywords": "tag1, tag2, tag3",
+    "canonicalUrl": "http://originalpage.com/static",
+    "isRoot": False,
+    "order": 1,
+    "parentId": 1,
+    "exludeFromMenu": False,
+    "type": "html",
+    "body": "<h1>My super Post</h1><p>Awesome!</p>",
+    "itemId": null,
+    "listId": null
+  },
+  {
+    "id": "3",
+    "title": "List page",
+    "description": "My List Page",
+    "keywords": "tag1, tag2, tag3",
+    "canonicalUrl": "http://originalpage.com/list",
+    "isRoot": False,
+    "order": 2,
+    "parentId": 1,
+    "exludeFromMenu": False,
+    "type": "list",
+    "body": null,
+    "itemId": null,
+    "listId": "23"
+  },
+  {
+    "id": "4",
+    "title": "Detail page",
+    "description": "My Detail Page",
+    "keywords": "tag1, tag2, tag3",
+    "canonicalUrl": "http://originalpage.com/detail",
+    "isRoot": False,
+    "order": 2,
+    "parentId": 1,
+    "exludeFromMenu": False,
+    "type": "item",
+    "body": null,
+    "itemId": "12",
+    "listId": null
+  }
+]
