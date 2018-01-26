@@ -12,7 +12,7 @@
     "type": "list", // list, item or html
     "body": null, // null or html content for html types
     "itemId": null, // null or item ID for item types
-    "listId": null, // null or liste ID for list types
+    "listFilters": null, // null or Filters array for list types
   },
   {
     "id": "2",
@@ -27,7 +27,7 @@
     "type": "html",
     "body": "<h1>My super Post</h1><p>Awesome!</p>",
     "itemId": null,
-    "listId": null
+    "listFilters": null
   },
   {
     "id": "3",
@@ -42,7 +42,9 @@
     "type": "list",
     "body": null,
     "itemId": null,
-    "listId": "23"
+    "listFilters": [
+      "category": "23"
+    ]
   },
   {
     "id": "4",

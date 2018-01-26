@@ -1,14 +1,28 @@
 Filters
 
-[
-  {
-    "id": "1", // Item ID
-    "type": "article",
-    ...
-  },
-  {
-    "id": "2", // Item ID
-    "type": "product",
-    ...
-  }
-]
+{
+  "count": 5,
+  "items": [
+    {
+      "id": "1", // Item ID
+      "type": "article", // article or product
+      "headline": "Titre",
+      "description": "Short article description",
+      "thumbnail": "",
+      "images": [],
+      "body": "<p></p>",
+      "authorName": "",
+      "dateModified": "",
+      "datePublished": ""
+    },
+    {
+      "id": "2", // Item ID
+      "type": "product",
+      ...
+    }
+  ],
+  "facets": [
+
+  ]
+
+}
