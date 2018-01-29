@@ -1,0 +1,16 @@
+[
+	{
+		"id": "string",
+		"isDefault": "bool",
+		"name": "string",
+		"logoUrl": "url link",
+		"baseUrl": "url link",
+		"currency": "currency code",
+		"localeCode": "locale code",
+		"timezone": "timezone code",
+		"frontEndName": "string",
+		"homeUrl": "string" ,(can be null)
+		"isActive": "1",
+		"defaultDescription": "string"
+	}, ...
+]
