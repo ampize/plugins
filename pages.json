@@ -1,3 +1,16 @@
+Root path
+---------
+
+/pages
+
+Query params
+------------
+
+None
+
+Example
+-------
+
 [
   {
     "id": "1", // Page ID

@@ -1,8 +1,13 @@
+Root path
+---------
+
+/item
+
 Query params
 ------------
 
 ** query: full text search
-** page: number of page
+** page: number of the required page
 ** pagesize: number of items per page, default set by API
 ** order: ASC or DESC, default set by API
 ** orderby: order by field, default set by API
@@ -19,7 +24,8 @@ Result
 ** facets: array of facets
 ** filters: array of filters ?
 
-Example for articles:
+Example for articles
+--------------------
 
 Query: ../api/items?query=test&page=1&pagesize=2&orderby=date&order=DESC&filters[category]=cat1&filters[tag]=tag1
 
@@ -64,3 +70,8 @@ Query: ../api/items?query=test&page=1&pagesize=2&orderby=date&order=DESC&filters
     }
   ]
 }
+
+Example for products
+--------------------
+
+TODO
