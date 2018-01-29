@@ -1,28 +1,66 @@
-Filters
+Query params
+------------
+
+** query: full text search
+** page: number of page
+** pagesize: number of items per page, default set by API
+** order: ASC or DESC, default set by API
+** orderby: order by field, default set by API
+** filters: key/value array of filters
+
+Result
+------
+
+** numItems: total items count
+** numPages: total pages count
+** pageSize: current page size
+** currentPage: current page number
+** items: array of items
+** facets: array of facets
+** filters: array of filters ?
+
+Example for articles:
+
+Query: ../api/items?query=test&page=1&pagesize=2&orderby=date&order=DESC&filters[category]=cat1&filters[tag]=tag1
 
 {
-  "count": 5,
+  "numItems": 1,
+  "numPages": 1,
+  "pageSize": 2,
+  "currentPage": 1,
   "items": [
     {
-      "id": "1", // Item ID
-      "type": "article", // article or product
-      "headline": "Titre",
+      "id": 5,
+      "type": "article",
+      "headline": "Hello world2!",
       "description": "Short article description",
-      "thumbnail": "",
-      "images": [],
-      "body": "<p></p>",
-      "authorName": "",
-      "dateModified": "",
-      "datePublished": ""
-    },
-    {
-      "id": "2", // Item ID
-      "type": "product",
-      ...
+      "image": "http://localhost/wp-content/uploads/2018/01/Capture-d’écran-2018-01-19-à-13.12.48.png",
+      "body": "<p>Welcome to WordPress</p>",
+      "authorName": "user",
+      "datePublished": "2018-01-24T14:11:33+0000",// ISO8601
+      "dateModified": "2018-01-28T14:37:25+0000", // ISO8601
+      "categories": [
+        {
+          "name": "Category 1",
+          "filter": {
+            "category": "cat1"
+          }
+        }
+      ],
+      "tags": [
+        {
+          "name": "tag1",
+          "filter": {
+            "post_tag": "tag1"
+          }
+        },
+        {
+          "name": "tag2",
+          "filter": {
+            "post_tag": "tag2"
+          }
+        }
+      ]
     }
-  ],
-  "facets": [
-
   ]
-
 }
