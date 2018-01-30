@@ -56,6 +56,8 @@ Query: ../api/item/1
 
 Example for products
 --------------------
+
+Query: ../api/item?sku=wbk012c-Red-S&siteId=2
 {
   "siteId": "2",
   "sku": "wbk012c-Red-S",
