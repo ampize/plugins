@@ -1,18 +1,19 @@
 Root path
 ---------
 
-/items
+/item
 
 Query params
 ------------
 
-** id: id of the requested item
+** id: id of the requested item (sku for product)
+** siteId : id of the website
 ** filters: optional additional filters
 
 Result
 ------
 
-item or null
+item with his possible variations or null
 
 Example for articles
 --------------------
@@ -55,5 +56,91 @@ Query: ../api/item/1
 
 Example for products
 --------------------
+{
+  "siteId": "2",
+  "sku": "wbk012c-Red-S",
+  "id": "891",
+  "isAvailable": false,
+  "excludeFromCatalog": false,
+  "excludeFromSearch": true,
+  "price": "210.0000",
+  "stock": "100.0000",
+  "name": "Elizabeth Knit Top",
+  "shortDescription": "The demure Elizabeth Knit features a semi sheer open weave and a forgiving silhouette. A nude camisole underneath keeps a stylish but conservative look. French",
+  "description": "Loose fitting from the shoulders, open weave knit top. Semi sheer.  Slips on. Faux button closure detail on the back. Linen/Cotton. Machine wash.",
+  "categories": [
+    {
+      "name": "Nouvelles arrivées",
+      "filter": {
+        "category": "10"
+      }
+    },
+    {
+      "name": "Tops & Blouses",
+      "filter": {
+        "category": "11"
+      }
+    }
+  ],
+  "attributes": [
+    {
+      "type": "configurable",
+      "label": "Color",
+      "value": "Red"
+    },
+    {
+      "type": "simple",
+      "label": "Occasion",
+      "value": "Casual"
+    },
+    {
+      "type": "simple",
+      "label": "Type",
+      "value": "Knits"
+    },
+    {
+      "type": "configurable",
+      "label": "Size",
+      "value": "S"
+    },
+    {
+      "type": "simple",
+      "label": "Gender",
+      "value": "Female"
+    }
+  ],
+  "images": [
+    {
+      "url": "http://local.magento:32769/media/catalog/product/i/m/image-editing-101040_960_720_2.jpg",
+      "position": "1"
+    },
+    {
+      "url": "http://local.magento:32769/media/catalog/product/w/b/wbk012c-red.jpg",
+      "position": "7"
+    }
+  ],
+  "defaultImages": [
+    {
+      "url": "http://local.magento:32769/media/catalog/product/w/b/wbk012b_4.jpg",
+      "position": "3"
+    }
+  ],
+  "variations": [
+    {
+      "sku": "wbk012",
+      "Color": "White",
+      "Size": "S"
+    },
 
-TODO
+    {
+      "sku": "wbk012c-Pink-S",
+      "Color": "Pink",
+      "Size": "S"
+    },
+    {
+      "sku": "wbk012c-Royal Blue-L",
+      "Color": "Royal Blue",
+      "Size": "L"
+    }
+  ]
+}
