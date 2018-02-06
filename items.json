@@ -11,23 +11,24 @@ Query params
 ** pagesize: number of items per page, default set by API
 ** order: ASC or DESC, default set by API
 ** orderby: order by field, default set by API
-** filters: key/value array of filters
+** filters: key/arrayofvalue array of filters
+** visibility : visibility of the items 1=Nowhere, 2=Catalog, 3=Search, 4=Both  
 
 Result
 ------
 
 ** numItems: total items count
 ** numPages: total pages count
-** pageSize: current page size
+** pageSize: page size
 ** currentPage: current page number
 ** items: array of items
-** facets: array of facets
-** filters: array of filters ?
+** facets: array of facets with count
+** activeFacets: array of active filters ?
 
 Example for articles
 --------------------
 
-Query: ../api/items?query=test&page=1&pagesize=2&orderby=date&order=DESC&filters[category]=cat1&filters[tag]=tag1
+Query: ../api/items?query=test&page=1&pagesize=2&orderby=date&order=DESC&filters[category][]=cat1&filters[tag]=tag1
 
 {
   "numItems": 1,
@@ -74,4 +75,58 @@ Query: ../api/items?query=test&page=1&pagesize=2&orderby=date&order=DESC&filters
 Example for products
 --------------------
 
-TODO
+Query : ../api/items?filters[category][]=11&siteId=2&filters[color][]=21&filters[color][]=26&pagesize=6&page=2&visibility=4&order=ASC&orderby=price&query=knit
+{
+  "activeFacets": [
+    {
+      "category": [
+        "11"
+      ]
+    },
+    {
+      "color": [
+        "21",
+        "26"
+      ]
+    }
+  ],
+  "warningMessages": [
+    "only the first value of the attribute color is used (or conditions not yet available)"
+  ],
+  "currentPage": "2",
+  "pageSize": "6",
+  "numItems": 2,
+  "numPages": 1,
+  "facets": {
+    "color": {
+      "name": "Color",
+      "values": {
+        "16": {
+          "count": "1",
+          "label": "Royal Blue",
+          "imageUrl": "http://local.magento:32769/media/wysiwyg/swatches/royal-blue.png"
+        },
+        "20": {
+          "count": "1",
+          "label": "Black",
+          "imageUrl": "http://local.magento:32769/media/wysiwyg/swatches/black.png"
+        },
+      }
+    },
+    "items": [
+      {
+        "sku": "wbk000c",
+        "name": "NoLIta Cami",
+        "shortDescription": "Cut from tissue-weight silk crepe de chine, this airy style features a ruched neckline with tie and an unfinished hem for a contrastinly rugged feel. Compliment yours with skinny jeans.",
+        "price": "150.0000",
+        "image": "http://local.magento:32769/media/catalog/product/w/b/wbk000t.jpg"
+      },
+      {
+        "sku": "wbk012c",
+        "name": "Elizabeth Knit Top",
+        "shortDescription": "The demure Elizabeth Knit features a semi sheer open weave and a forgiving silhouette. A nude camisole underneath keeps a stylish but conservative look. French",
+        "price": "210.0000",
+        "image": "http://local.magento:32769/media/catalog/product/w/b/wbk012t.jpg"
+      }
+    ]
+}
